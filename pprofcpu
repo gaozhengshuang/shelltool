@@ -1,0 +1,18 @@
+#!/bin/bash
+
+port=$1
+duration=$2
+
+if [ -z "$port" ]    #如果参数不是空
+then
+    echo "need port"
+    exit
+fi
+
+if [ -z "$duration" ]
+then
+    duration=30
+fi
+
+go tool pprof -seconds=$duration http://127.0.0.1:$port/debug/pprof/profile
+

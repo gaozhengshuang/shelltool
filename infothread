@@ -1,0 +1,17 @@
+#!/bin/bash
+
+P_ID=$1
+P_NAME=$2
+
+if [ -z $P_NAME ]  #如果参数是空
+then
+  echo "-------------------------------"
+  echo "- main thread  |  sub thread  -"
+  echo "-------------------------------"
+  pstree -p $P_ID
+  echo "-------------------------------"
+else
+  P_THD_NUM=`pstree -p $P_ID | grep -c "$P_NAME"`
+  echo "$P_THD_NUM + 1" 
+fi
+

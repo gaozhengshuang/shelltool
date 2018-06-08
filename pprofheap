@@ -1,0 +1,25 @@
+#!/bin/bash
+
+port=$1
+optation=$2
+
+if [ -z "$port" ]    #如果参数是空
+then
+    echo "need listen port"
+    exit
+fi
+
+if [ $optation == "inuse_space" -o $optation == "inuse_objects"  -o $optation == "alloc_space" -o $optation == "alloc_objects" ]
+then
+    go tool pprof -$optation http://127.0.0.1:$port/debug/pprof/heap
+else
+    #optation=-alloc_space
+    echo "======== Heap Optation ========"
+    echo "inuse_space   Display in-use (mega)bytes [default]"
+    echo "inuse_objects Display in-use objects"
+    echo "alloc_space   Display allocated (mega)bytes"
+    echo "alloc_objects Display allocated objects"
+    echo "==============================="
+    exit
+fi
+

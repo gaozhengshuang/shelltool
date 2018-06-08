@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+open)
+    sudo supervisorctl start all
+    sudo supervisorctl status
+;;
+
+stop)
+    sudo supervisorctl stop all
+    sudo supervisorctl status
+;;
+*)
+    echo "you need input argument 'open' or 'stop'"
+;;
+esac

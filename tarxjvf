@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#extract tar.bz
+tar xjvf $1

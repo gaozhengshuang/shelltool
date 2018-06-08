@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd /home/ec2-user/hello/testln
+echo "**************pwd*************"
+pwd
+echo "******************************"
+echo ""
+
+
+logname="thello.log"
+lnfile=`readlink $logname`
+ln1=${lnfile##*"/home/ec2-user/hello/testln/"} 
+
+logname2="twolrd.log"
+lnfile2=`readlink $logname2`
+ln2=${lnfile2##*"/home/ec2-user/hello/testln/"} 
+
+#keepfiles=`ls | grep -v $logname | grep -v $ln1 | grep -v $logname2 | grep -v $ln2`
+keepfiles=`ls | grep -Ev "^$logname$|^$ln1$|^$logname2$|^$ln2$"`
+echo $keepfiles
+
+#rm `ls | grep -Ev "^$logname$|^$ln1$|^$logname2$|^$ln2$"`
+

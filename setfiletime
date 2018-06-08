@@ -1,0 +1,9 @@
+#!/bin/bash
+
+num=$#
+if [ ${num} != 1 ]; then
+    echo '输入一个时间: 例如 20170702'
+    exit 0
+fi
+
+find ./ -name '*' -exec touch -d $1 {} \;
