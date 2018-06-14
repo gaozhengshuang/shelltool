@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#svn st | grep -v tbxcc | grep -v protos | grep -v tinyxml
+svn st | \
+    grep -v "\.git" | \
+    grep -v "?" | \
+    grep -vP "bin/(.*)server" | \
+    grep -v "robot/robot" | \
+    grep -v "gateserver/gateserver$" | \
+    grep -v "loginserver/loginserver$" | \
+    grep -v "matchserver/matchserver$" | \
+    grep -v "roomserver/roomserver$"
