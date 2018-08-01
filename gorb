@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # For Go 1.10-
+#go build -gcflags "-N -l" -v -a -x
 #go build -gcflags "-N -l" -v -a
 
 # For Go 1.10+
