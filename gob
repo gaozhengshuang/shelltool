@@ -5,4 +5,4 @@
 #go build -gcflags "-N -l" -i -v
 
 # For Go 1.10+
-go build -gcflags "all=-N -l" -v
+go build -gcflags=all="-N -l" -v 
