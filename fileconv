@@ -1,0 +1,29 @@
+#!/bin/bash
+
+## example
+# filetype=.cpp
+# origin=gb2312
+# dest=utf-8
+
+filesuffix=$1
+origin=$2
+dest=$3
+
+##
+if [ -z $2 ]
+then
+    echo "should input origin encoding"
+    exit
+fi
+
+#如果参数是空
+if [ -z $3 ] 
+then
+    dest=utf-8
+fi
+
+
+##
+find ./ -iname "*.$filesuffix" -exec iconv -f $origin -t $dest {} -o {} \;
+
+
