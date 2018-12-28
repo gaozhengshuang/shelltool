@@ -25,6 +25,7 @@ then
     find ./ -iname \*.go  -exec grep $param_grep -n --color -H "$1" \{\} \;
     find ./ -iname \*.json -exec grep $param_grep -n --color -H "$1" \{\} \;
     find ./ -iname \*.py -exec grep $param_grep -n --color -H "$1" \{\} \;
+    find ./ -iname \*.sql -exec grep $param_grep -n --color -H "$1" \{\} \;
 elif [ "all" == $3 ]
 then
     find ./ -type f | xargs grep $param_grep -n --color -H "$1"
