@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#为执行shell路径生成tags
+#nowpath=`pwd`
+#ctags -R --c++-kinds=+px --fields=+iaS --extra=+q .
+#echo 'generate ctags from "'$nowpath'" ok'
+
+#为主工作目录设置ctags
+ctags -R --c++-kinds=+px --fields=+iaS --extra=+q .
+echo 'generate ctags ok'
+
+
+
