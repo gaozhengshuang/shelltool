@@ -1,3 +1,5 @@
 #!/bin/bash
 
-mysql -uxiejian -pxie@12345
+#mysql -uxiejian -pxie@12345
+#mysql -uxiyou -p123456
+/usr/bin/mysql -uxiyou -p123456
